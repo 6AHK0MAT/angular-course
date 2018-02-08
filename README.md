@@ -5,6 +5,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+To change porn you must change 'start' command to "start": "ng serve --port 4300"
+
+If you have problem with start on 95%
+npm install copy-webpack-plugin@4.3.0
+Fix the problem
 
 ## Code scaffolding
 
