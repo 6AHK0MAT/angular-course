@@ -1,7 +1,6 @@
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-    // selector: '[app-cars]',
     selector: 'app-cars',
     templateUrl: './cars.component.html',
     styleUrls: ['./cars.component.css']
@@ -9,24 +8,17 @@ import {Component} from '@angular/core';
 export class CarsComponent {
 
     addCarStatus = '';
-    inputText = '';
+    inputText = 'Default text';
 
     constructor() {
-
     }
 
     addCar() {
-        this.addCarStatus = 'Машина добавлена';
+        this.addCarStatus = 'Машина добавлена!';
     }
 
-    /*
-     onKeyUp(event: Event){
-     // console.log(event);
-     this.inputText = (<HTMLInputElement>event.target).value;
-     }
-     */
-
-    onKeyUp(value) {
-        this.inputText = value;
+    onKeyUp(event) {
+        this.inputText = event.target.value;
     }
+
 }
