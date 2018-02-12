@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
     selector: 'app-cars',
@@ -7,10 +7,7 @@ import { Component } from '@angular/core';
 })
 export class CarsComponent {
 
-    carName = '';
-    carYear = 2017;
-
-    cars: [{name: string, year: number}] = [{
+    cars: [{ name: string, year: number }] = [{
         name: 'Ford',
         year: 2015
     }, {
@@ -25,12 +22,8 @@ export class CarsComponent {
     constructor() {
     }
 
-    addCar() {
-        this.cars.push({
-            name: this.carName,
-        year: this.carYear});
-        this.carName = '';
-        this.carYear = 2017;
+    updateCarList(car: {name: string, year: number}) {
+        this.cars.push(car);
     }
 
 }
