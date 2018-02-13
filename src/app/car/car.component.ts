@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, ContentChild, ElementRef, Input, ViewChild} from '@angular/core';
 
 @Component({
     selector: 'app-car',
@@ -7,5 +7,11 @@ import {Component, Input} from '@angular/core';
 })
 export class CarComponent {
     @Input('carItem') car: { name: string, year: number };
-    private carItem = false;
+    @ContentChild('carHeading') carHeading: ElementRef;
+
+    ngAfterViewInit() {
+        console.log(this.carHeading);
+    }
 }
+
+
