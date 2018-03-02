@@ -12,6 +12,14 @@ interface Cars {
   templateUrl: './app.component.html'
 })
 export class AppComponent {
+  colors = [
+    'red',
+    'blue',
+    'green',
+    'pink',
+    'yellow',
+    'grey'
+  ];
   cars: Cars[] = [];
   carName: string = '';
 
@@ -32,5 +40,17 @@ export class AppComponent {
         this.cars.push(car);
       });
     this.carName = '';
+  }
+
+  getRandColor() {
+    const num = Math.round(Math.random() * (this.colors.length - 1));
+    return this.colors[num];
+  }
+
+  setNewColor(car: Cars) {
+    this.carsService.changeColor(car, this.getRandColor())
+      .subscribe((data) => {
+        console.log(data);
+      });
   }
 }
