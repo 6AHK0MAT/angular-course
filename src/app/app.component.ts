@@ -13,6 +13,7 @@ interface Cars {
 })
 export class AppComponent {
   cars: Cars[] = [];
+  carName: string = '';
 
   constructor(private carsService: CarsService) {}
 
@@ -22,5 +23,14 @@ export class AppComponent {
       .subscribe((cars: Cars[]) => {
         this.cars = cars;
       });
+  }
+
+  addCar() {
+    this.carsService
+      .addCar(this.carName)
+      .subscribe((car: Cars) => {
+        this.cars.push(car);
+      });
+    this.carName = '';
   }
 }
