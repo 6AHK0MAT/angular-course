@@ -1,4 +1,7 @@
 {
+  "title": {
+    "value": "Менеджер машин"
+  },
   "cars": [
     {
       "name": "Ford",
@@ -6,19 +9,19 @@
       "id": 1
     },
     {
-      "name": "Opel",
-      "color": "red",
-      "id": 2
+      "name": "Bently",
+      "color": "pink",
+      "id": 5
     },
     {
       "name": "Audi",
-      "color": "yellow",
-      "id": 3
+      "color": "green",
+      "id": 6
     },
     {
-      "name": "Запахрожец",
+      "name": "Chevrolet",
       "color": "blue",
-      "id": 4
+      "id": 7
     }
   ]
 }
