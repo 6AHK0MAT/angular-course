@@ -1,27 +1,26 @@
 <div class="container">
-    <div class="row">
-
-        <div class="col-xs-8 col-xs-offset-2">
-            <h1>{{ appTitle | async }}</h1>
-            <input type="text" class="form-control" [(ngModel)]="carName">
-            <hr>
-            <button class="btn btn-primary" (click)="loadCars()">Загрузить машины</button>
-            <button class="btn btn-success" (click)="addCar()">Добавить машину</button>
-            <hr>
-            <ul class="list-group">
-                <li class="list-group-item" *ngFor="let car of cars | async">
-      <span class="badge" [ngStyle]="{background: car.color}">
-        {{car.id}}
-      </span>
-                    {{car.name}}
-                    <button class="btn btn-xs btn-info" (click)="setNewColor(car)">Изменить цвет</button>
-                    <button class="btn btn-xs btn-danger" (click)="deleteCar(car)">Удалить машину</button>
-                </li>
-            </ul>
-        </div>
-
-
-
-
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Главная</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Машины</a>
+        </li>
+      </ul>
     </div>
+  </nav>
+
+
+
+  <div class="row">
+    <div class="col-10 offset-1">
+      <app-home-page></app-home-page>
+      <app-cars-page></app-cars-page>
+    </div>
+  </div>
 </div>
